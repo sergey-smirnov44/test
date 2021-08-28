@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="shortcut icon" href="img/dest/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="img/dest/favicon.ico" type="image/x-icon">
+    <title>Chat macOS</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row ">
+            <!--***************   Левое меню   **********************-->
+            <div class="col-25">
+                <div class="menu">
+                    <!--***************   кнопки для макбука  **********************-->
+                    <div class="button-macos d-flex justify-content-center">
+                        <buttuon class="button-macos__item button-macos__item--red mr-2"></buttuon>
+                        <buttuon class="button-macos__item button-macos__item--yellow mr-2"></buttuon>
+                        <buttuon class="button-macos__item button-macos__item--green"></buttuon>
+
+                    </div>
+                    <!--***************   круглые ссылки  **********************-->
+                    <div class="menu-list d-flex flex-column align-items-center flex-wrap">
+                        <div class="menu-list__item menu-list__item--icon1"></div>
+                        <div class="menu-list__item menu-list__item--icon2"></div>
+                        <div class="menu-list__item menu-list__item--icon3"></div>
+                        <div class="menu-list__item menu-list__item--icon4"></div>
+                        <div class="menu-list__item menu-list__item--icon5"></div>
+                        <div class="menu-list__item menu-list__item--icon6"></div>
+                        <div class="menu-list__item menu-list__item--icon7"></div>
+                        <div class="menu-list__item menu-list__item--icon8"></div>
+                    </div>
+                </div>
+            </div>
+            <!--***************   Список участников  **********************-->
+            <div class="col-25">
+                <div class="list-of-participants">
+                    <h1 class="list-of-participants__title">Nomad List</h1>
+                    <div class="list-of-participants__themes">All treads</div>
+                    <div class="channels d-flex flex-column">
+                        <div class="channels d-flex justify-content-around">
+                            <h2 class="channels__title">Channels</h2>
+                            <div class="channels__count"><span id="listChanels"></span></div>
+                        </div>
+                        <!--***************   список каналов  **********************-->
+                        <ul class="d-flex flex-column ">
+                            <li class="channels__item"># general</li>
+                            <li class="channels__item"># support</li>
+                            <li class="channels__item"># marketing</li>
+                            <li class="channels__item"># thailand</li>
+                            <li class="channels__item"># bali</li>
+                            <li class="channels__item"># poland</li>
+                            <li class="channels__item"># australia</li>
+                            <li class="channels__item"># jobs</li>
+                            <li class="channels__item"># startups</li>
+                            <li class="channels__item"># italy</li>
+                            <li class="channels__item"># freelance</li>
+                        </ul>
+                    </div>
+                    <div class="friends">
+                        <div class="friends d-flex justify-content-around">
+                            <h2 class="friends__title">friends</h2>
+                            <p class="friends__count"><span id="countFriends"></span></p>
+                        </div>
+                        <div class="friends__list" >
+                            <div class="people max d-flex align-items-center">
+                                <div class="people__status people__status--online"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face1.png" alt="">
+                                </div>
+                                <div class="people__name">Orlando Diggs</div>
+                            </div>
+                            <div class="people d-flex align-items-center">
+                                <div class="people__status people__status--online"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face2.png" alt="">
+                                </div>
+                                <div class="people__name">Carmen Velasco</div>
+                            </div>
+                            <div class="people d-flex align-items-center">
+                                <div class="people__status people__status--offline"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face3.png" alt="">
+                                </div>
+                                <div class="people__name">Marie Jensen</div>
+                            </div>
+                            <div class="people d-flex align-items-center">
+                                <div class="people__status people__status--offline"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face4.png" alt="">
+                                </div>
+                                <div class="people__name">Alex Lee</div>
+                            </div>
+                            <div class="people d-flex align-items-center">
+                                <div class="people__status people__status--offline"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face5.png" alt="">
+                                </div>
+                                <div class="people__name">Leo Gill</div>
+                            </div>
+                            <div class="people d-flex align-items-center">
+                                <div class="people__status people__status--offline"></div>
+                                <div class="people__photo">
+                                    <img src="img/dest/list-of-participants/face6.png" alt="">
+                                </div>
+                                <div class="people__name">Britney Cooper</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--***************   Главное окно - чат  **********************-->
+            <div class="col-xl-8">
+                <div class="main-area">
+                    <div class="main-area__scroll" onscroll="onscroll" id="showScroll"></div>
+                    <div class="top-menu d-flex align-items-center">
+                        <h1 class="top-menu__title">#general</h1>
+                        <span id="allText"></span>
+                        <img class="top-menu__img" src="img/dest/main-menu/favorites.png" alt="favorites"/>
+                        <div class="top-menu__count offset-7">1,093</div>
+                        <div class="search">
+                            <input type="text" id="search" class="search__field error" placeholder="Search..."/>
+                            <img class="search__loupe" src="img/dest/main-menu/loupe.png" alt="search"/>
+                        </div>
+                        <div class="top-menu__notifications"><img src="img/dest/main-menu/bell.png" alt="notifications"
+                                                                  class="top-menu__notifications"></div>
+                        <img src="img/dest/main-menu/more.png" class="top-menu__more" alt="more">
+<!--                        <input id="scriptBox" type="text" onkeypress=" return max(event)" />-->
+                    </div>
+                    <div class="chat" id="example">
+<!--
+                        &lt;!&ndash;******************************1 message********************************&ndash;&gt;
+                        <div class="message">
+                            <img class="message__photo" src="img/dest/main-menu/f1.png" alt="Jeshua Stout">
+                            <div class="text d-flex flex-column">
+                                <div class="d-flex mb-1">
+                                    <p class="message__name">Jeshua Stout</p>
+                                    <p class="message__time">6:38 PM</p>
+                                </div>
+
+                                <p class="message__text message__text&#45;&#45;answer">@pierrhack <a
+                                        href="https://goingawesomeplaces.com/6-day-iceland-road-trip-itinerary/"
+                                        target="_blank">I did for 6 days in
+                                    Iceland</a></p>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-date">Monday, October 22nd</div>
+                        </div>
+                        &lt;!&ndash;******************************2 message********************************&ndash;&gt;
+                        <div class="message">
+                            <img class="message__photo" src="img/dest/main-menu/f2.png" alt="Harold Adams">
+                            <div class="text d-flex flex-column">
+                                <div class="d-flex mb-1">
+                                    <div class="message__name">Harold Adams</div>
+                                    <div class="message__time">5:02 PM</div>
+                                </div>
+                                <div class="message__text">Which country to visit next? This is a photo with my friends
+                                    -
+                                    celebrating in Bali😎
+                                </div>
+                                <a class="message__text message__text&#45;&#45;answer" href="img/dest/main-menu/friends.png"
+                                   target="_blank">my-top-places.jpg</a>
+                                <img src="img/dest/main-menu/friends.png" alt="friends" class="message__img">
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-date">Yesterday</div>
+                        </div>
+                        &lt;!&ndash;******************************3 message********************************&ndash;&gt;
+                        <div class="message">
+
+                            <img class="message__photo" src="img/dest/main-menu/f3.png" alt="Aada Laine">
+
+                            <div class="text d-flex flex-column">
+                                <div class="d-flex mb-1">
+                                    <div class="message__name">Aada Laine</div>
+                                    <div class="message__time">11:54 AM</div>
+                                </div>
+                                <div class="message__text message__text&#45;&#45;answer">@har_adams <a
+                                        href="https://www.escapecampervans.com/campervans/" target="_blank">wow it’s
+                                    amazing, I want to
+                                    buy
+                                    a van and travelling next year🚐</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="line-date">Today</div>
+                        </div>
+                        &lt;!&ndash;******************************4 message********************************&ndash;&gt;
+                        <div class="message">
+                            <img class="message__photo" src="img/dest/main-menu/f4.png" alt="Nala Hester">
+                            <div class="text d-flex flex-column">
+                                <div class="d-flex mb-1">
+                                    <div class="message__name">Nala Hester</div>
+                                    <div class="message__time">11:54 AM</div>
+                                </div>
+                                <div class="message__text">Working from a van in Australia isn’t feasible if you need
+                                    internet. It may have improved over the last years but I spent some time in a camper
+                                    van
+                                    around Tasmania and internet was a real problem (and Tasmania is tiny compared to
+                                    the
+                                    rest of the country).
+                                </div>
+                            </div>
+                        </div>
+                        &lt;!&ndash;******************************5 message********************************&ndash;&gt;
+                        <div class="message">
+                            <img class="message__photo" src="img/dest/main-menu/f5.png" alt="Ramon Bateman">
+                            <div class="text d-flex flex-column">
+                                <div class="d-flex mb-1">
+                                    <div class="message__name">Ramon Bateman</div>
+                                    <div class="message__time">11:59 AM</div>
+                                </div>
+                                <div class="message__text"><a
+                                        class="message__text&#45;&#45;answer" href="#">@aa_da</a>
+                                    What's the reason for the van? Saving money or just like to get outside? If you've
+                                    got a
+                                    stable source of income you could always do some short term Airbnbs + buy a
+                                    truck/topper, build a platform in the back. That way you can always convert it back
+                                    to a
+                                    truck and sleep in an apartment if you want.
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="write-message">
+                        <img src="img/dest/main-menu/attach.png" alt="attach" class="write-message__attach">
+                        <img src="img/dest/main-menu/audio.png" alt="audio-message"
+                             class="write-message__audio-message">
+                        <input type="text" class="write-message__text-field" placeholder="Message in #general">
+                        <img src="img/dest/main-menu/emoji.png" alt="emoji" class="write-message__emoji">
+                    </div>
+                </div>
+            </div>
+            <!--***************   Информация об участнике чата  **********************-->
+            <div class="col">
+                <div class="infouser">
+                    <img src="img/dest/info-column/girl.png" alt="photo" class="infouser__photo">
+                    <div class="info-column">
+                        <p class="info-column__name">Amilia Luna</p>
+                        <p class="info-column__profession">UI Designer</p>
+                        <ul class="social d-flex">
+                            <li class="social__item social__item--fb"></li>
+                            <li class="social__item social__item--tw"></li>
+                            <li class="social__item social__item--ins"></li>
+                            <li class="social__item social__item--in"></li>
+                        </ul>
+                        <div class="message d-flex align-items-center">
+                            <button class="message__btn">Message</button>
+                            <button class="message__more"></button>
+                        </div>
+                        <div class="username">
+                            <p class="username__description">Username</p>
+                            <p class="username__title">@amilia_lu</p>
+                        </div>
+                        <div class="email">
+                            <p class="email__description">Email</p>
+                            <p class="email__title">a-luna@gmail.com</p>
+                        </div>
+                        <div class="skype">
+                            <p class="skype__description">Skype</p>
+                            <p class="skype__title">amiluna</p>
+                        </div>
+                        <div class="timezone">
+                            <p class="timezone__description">Timezone</p>
+                            <p class="timezone__time">2:21 PM Local time</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/app.min.js" type="module"></script>
+</body>
+</html>
+
