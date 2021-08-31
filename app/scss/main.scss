@@ -469,6 +469,7 @@ body {
           line-height: 20px;
           color: #000;
           margin-left: 5px;
+          white-space: pre-wrap;
 
 
           &--answer {
@@ -535,12 +536,15 @@ body {
   }
 
   .infouser {
+
     background: rgba(0, 0, 0, .2);
     width: 100%;
     height: 100%;
 
     &__photo {
       width: 100%;
+      max-width: 300px;
+
     }
 
     .info-column {
