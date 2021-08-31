@@ -160,7 +160,7 @@ for (let message in allMessages) {
  *              конкретного пользователя (нажми на любого пользователя)
  *
  *********************************************************************/
-let newUser = [];
+let newUser = {};
 let infoUser = document.getElementById('infoUser');
 let allFriends = document.getElementsByClassName('people');
 
@@ -170,48 +170,47 @@ for (let i = 0; i < allFriends.length; i++) {
     allFriends[i].addEventListener('click', function (event) {
         allUsers[i].flag = true;
         if (allUsers[i].flag) {
-        for (let key in allUsers) {
-            newUser += '<div class="infouser">'
-            newUser += `<img alt="${allUsers[key].photo}" class="infouser__photo" src="${allUsers[key].photo}">`
-            newUser += '<div class="info-column">'
-            newUser += '<p class="info-column__name">' + allUsers[key].name + '</p>'
-            newUser += '<p class="info-column__profession">' + allUsers[key].profession + '</p>'
-            newUser += '<ul class="social d-flex">'
-            newUser += '<li class="social__item social__item--fb"></li>'
-            newUser += '<li class="social__item social__item--tw"></li>'
-            newUser += '<li class="social__item social__item--ins"></li>'
-            newUser += '<li class="social__item social__item--in"></li>'
-            newUser += '</ul>'
-            newUser += '<div class="message d-flex align-items-center">'
-            newUser += '<button class="message__btn">Message</button>'
-            newUser += '<button class="message__more"></button>'
-            newUser += '</div>'
-            newUser += '<div class="username">'
-            newUser += '<p class="username__description">Username</p>'
-            newUser += '<p class="username__title">' + allUsers[key].username + '</p>'
-            newUser += '</div>'
-            newUser += '<div class="email">'
-            newUser += '<p class="email__description">Email</p>'
-            newUser += '<p class="email__title">' + allUsers[key].email + '</p>'
-            newUser += '</div>'
-            newUser += '<div class="skype">'
-            newUser += '<p class="skype__description">Skype</p>'
-            newUser += '<p class="skype__title">' + allUsers[key].skype + '</p>'
-            newUser += '</div>'
-            newUser += '<div class="timezone">'
-            newUser += '<p class="timezone__description">Timezone</p>'
-            newUser += '<p class="timezone__time">' + allUsers[key].timezone + '</p>'
-            newUser += '</div>'
-            newUser += '</div>'
-            newUser += '</div>'
-
-            console.log(newUser, allUsers)
+            for (let key in allUsers) {
+                newUser += '<div class="infouser">'
+                newUser += `<img alt="${allUsers[key].photo}" class="infouser__photo" src="${allUsers[key].photo}">`
+                newUser += '<div class="info-column">'
+                newUser += '<p class="info-column__name">' + allUsers[key].name + '</p>'
+                newUser += '<p class="info-column__profession">' + allUsers[key].profession + '</p>'
+                newUser += '<ul class="social d-flex">'
+                newUser += '<li class="social__item social__item--fb"></li>'
+                newUser += '<li class="social__item social__item--tw"></li>'
+                newUser += '<li class="social__item social__item--ins"></li>'
+                newUser += '<li class="social__item social__item--in"></li>'
+                newUser += '</ul>'
+                newUser += '<div class="message d-flex align-items-center">'
+                newUser += '<button class="message__btn">Message</button>'
+                newUser += '<button class="message__more"></button>'
+                newUser += '</div>'
+                newUser += '<div class="username">'
+                newUser += '<p class="username__description">Username</p>'
+                newUser += '<p class="username__title">' + allUsers[key].username + '</p>'
+                newUser += '</div>'
+                newUser += '<div class="email">'
+                newUser += '<p class="email__description">Email</p>'
+                newUser += '<p class="email__title">' + allUsers[key].email + '</p>'
+                newUser += '</div>'
+                newUser += '<div class="skype">'
+                newUser += '<p class="skype__description">Skype</p>'
+                newUser += '<p class="skype__title">' + allUsers[key].skype + '</p>'
+                newUser += '</div>'
+                newUser += '<div class="timezone">'
+                newUser += '<p class="timezone__description">Timezone</p>'
+                newUser += '<p class="timezone__time">' + allUsers[key].timezone + '</p>'
+                newUser += '</div>'
+                newUser += '</div>'
+                newUser += '</div>'
         }
 
+            console.log(allUsers[i])
+            infoUser.innerHTML = allUsers[i]
+    }
 
-
-        }
-        infoUser.innerHTML = newUser
+        // infoUser.innerHTML = allUsers[i]
     });
 
 
