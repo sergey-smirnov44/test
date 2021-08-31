@@ -15,14 +15,11 @@ let listChanels;// подсчет кол-ва каналов в левом ме�
     listChanels = listChanels.length;
     document.getElementById('listChanels').innerHTML = listChanels;
 }
-
-
 /*********************************************************************
  *
  *                       Генерация сообщений из data.js
  *
  *********************************************************************/
-
 function generate(messages) {
     let partMessage = '';
     for (let key in messages) {
@@ -45,18 +42,16 @@ function generate(messages) {
 
 generate(allMessages);
 
-
 /*********************************************************************
  *
  *                        Генерация списка друзей
  *
  *********************************************************************/
-
 function generateFriends(friendsList) {
     let friend = '';
     for (let key in friendsList) {
         friend += '<div class="people max d-flex align-items-center">'
-        friend += `<div class="people__status people__status--online status"></div>`
+        friend += `<div class="people__status people__status--online"></div>`
         friend += '<div class="people__photo">'
         friend += `<img src="${friendsList[key].photo}" class="people__img" alt="${friendsList[key].name}">`
         friend += `</div>`
@@ -68,13 +63,14 @@ function generateFriends(friendsList) {
 }
 
 generateFriends(friends);
+console.log(friends)
+console.log(allUsers)
 
 /*********************************************************************
  *
  *                        Статус друга (онлайн)
  *
  *********************************************************************/
-
 let statusOnline = document.getElementsByClassName('people__status')
 for (let i = 0; i < statusOnline.length; i++) {
     if (!friends[i].online) {
@@ -82,9 +78,13 @@ for (let i = 0; i < statusOnline.length; i++) {
         statusOnline[i].classList.add('people__status--offline')
     }
 }
-
 {
-    // подсчет кол-ва друзей в левом меню
+
+    /*********************************************************************
+     *
+     *                     Подсчет кол-ва друзей в левом меню
+     *
+     *********************************************************************/
     countFriends = document.getElementsByClassName(`people`);
     countFriends = countFriends.length;
     document.getElementById('countFriends').innerHTML = countFriends;
@@ -154,9 +154,6 @@ for (let message in allMessages) {
     });
 }());
 
-let listFriends = document.getElementsByClassName(`people`);
-
-
 /*********************************************************************
  *
  *              Просмотр профиля (отображается справа)
@@ -164,14 +161,16 @@ let listFriends = document.getElementsByClassName(`people`);
  *
  *********************************************************************/
 let newUser = [];
-let infouser = document.getElementById('infouser');
+let infoUser = document.getElementById('infoUser');
 let allFriends = document.getElementsByClassName('people');
-for (let i = 1; i < allFriends.length; i++) {
-    allFriends[i].addEventListener('click', function (event) {
 
-        // for (let i=1; i<allFriends.length; i++) {
+
+for (let i = 0; i < allFriends.length; i++) {
+
+    allFriends[i].addEventListener('click', function (event) {
+        allUsers[i].flag = true;
+        if (allUsers[i].flag) {
         for (let key in allUsers) {
-            // infouser.style.display='block';
             newUser += '<div class="infouser">'
             newUser += `<img alt="${allUsers[key].photo}" class="infouser__photo" src="${allUsers[key].photo}">`
             newUser += '<div class="info-column">'
@@ -206,16 +205,18 @@ for (let i = 1; i < allFriends.length; i++) {
             newUser += '</div>'
             newUser += '</div>'
 
-
-            listFriends[i].id == allUsers[key].id;
-
-            allUsers[i].flag = true ? document.getElementById('infouser').innerHTML = newUser : false;
+            console.log(newUser, allUsers)
         }
+
+
+
+        }
+        infoUser.innerHTML = newUser
     });
 
 
-}
 
+}
 
 
 
