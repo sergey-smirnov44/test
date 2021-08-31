@@ -1,23 +1,27 @@
 import * as data from './data.js'
 
-let allMessages = data.messages; // массив объектов из data.js передаем в allmessades
+let allMessages = data.messages; // массив объектов из data.js передаем в allMessades
 let allUsers = data.users;
+let friends = data.friends;
 let countFriends;// подсчет кол-ва друзей в левом меню
 let listChanels;// подсчет кол-ва каналов в левом меню
-
 {
-    // подсчет кол-ва каналов в левом меню
+    /*********************************************************************
+     *
+     *                   Подсчет кол-ва каналов в левом меню
+     *
+     *********************************************************************/
     listChanels = document.getElementsByClassName(`channels__item`);
     listChanels = listChanels.length;
     document.getElementById('listChanels').innerHTML = listChanels;
 }
 
-{
-    // подсчет кол-ва друзей в левом меню
-    countFriends = document.getElementsByClassName(`people`);
-    countFriends = countFriends.length;
-    document.getElementById('countFriends').innerHTML = countFriends;
-}
+
+/*********************************************************************
+ *
+ *                       Генерация сообщений из data.js
+ *
+ *********************************************************************/
 
 function generate(messages) {
     let partMessage = '';
@@ -42,50 +46,87 @@ function generate(messages) {
 generate(allMessages);
 
 
-(function () {
+/*********************************************************************
+ *
+ *                        Генерация списка друзей
+ *
+ *********************************************************************/
 
+function generateFriends(friendsList) {
+    let friend = '';
+    for (let key in friendsList) {
+        friend += '<div class="people max d-flex align-items-center">'
+        friend += `<div class="people__status people__status--online status"></div>`
+        friend += '<div class="people__photo">'
+        friend += `<img src="${friendsList[key].photo}" class="people__img" alt="${friendsList[key].name}">`
+        friend += `</div>`
+        friend += `<div class="people__name">${friendsList[key].name}</div>`
+        friend += '</div>'
+
+    }
+    document.getElementById('friends').innerHTML = friend;
+}
+
+generateFriends(friends);
+
+/*********************************************************************
+ *
+ *                        Статус друга (онлайн)
+ *
+ *********************************************************************/
+
+let statusOnline = document.getElementsByClassName('people__status')
+for (let i = 0; i < statusOnline.length; i++) {
+    if (!friends[i].online) {
+        statusOnline[i].classList.remove('people__status--online')
+        statusOnline[i].classList.add('people__status--offline')
+    }
+}
+
+{
+    // подсчет кол-ва друзей в левом меню
+    countFriends = document.getElementsByClassName(`people`);
+    countFriends = countFriends.length;
+    document.getElementById('countFriends').innerHTML = countFriends;
+}
+
+/*********************************************************************
+ *
+ *                   Строка поиска по слову из сообщения (нужно вводить
+ *                   сообщение целиком)
+ *
+ *********************************************************************/
+(function () {
     let searchField = ''; // переменная для ошибки (пользователь ничего не ввел)
     let searchValue = document.getElementById('search');
     searchValue.addEventListener('keydown', function (event) {
-
-
         if (event.key !== 'Enter' || searchValue.value == '') {
             return false;
         }
-
         /*            *************Ужасный вариант поиска***************           */
         let filtered = allMessages.filter(i => i.text === searchValue.value);
-        console.log(filtered.text)
-
-
         generate(filtered);
-
-
         this.value = '';
-
     });
 })();
 
 for (let message in allMessages) {
     let desiredMessage = Object.values(allMessages[message])
     let arrMes = allMessages[message].text.split()
-    // console.log(desiredMessage)
+
     const filtered = (desiredText) => {
         return arrMes.filter(data => {
             return data.toLowerCase().indexOf(desiredText.toLowerCase()) > -1;
         })
-        // console.log(filtered("Which country to visit next? This is a photo with my friends - celebrating in Bali😎"))
-
 
     }
     const filt = filtered("Wo");
-
-    // console.log(desiredMessage)
-    // console.log(arrMes )
 }
-;
-
-
+/*********************************************************************
+ *
+ *                   Добавление сообщений через нижний input
+ *
+ *********************************************************************/
 (function pushMessage() {
     let addMessage = document.getElementById('addMessage');
     addMessage.addEventListener('keydown', function (event) {
@@ -109,8 +150,6 @@ for (let message in allMessages) {
 
         allMessages.push(newMessage)
         generate(allMessages);
-        console.log(allMessages[5])
-
         this.value = '';
     });
 }());
@@ -118,12 +157,16 @@ for (let message in allMessages) {
 let listFriends = document.getElementsByClassName(`people`);
 
 
-
-/**************************Просмотр людских профилей************************/
+/*********************************************************************
+ *
+ *              Просмотр профиля (отображается справа)
+ *              конкретного пользователя (нажми на любого пользователя)
+ *
+ *********************************************************************/
 let newUser = [];
 let infouser = document.getElementById('infouser');
 let allFriends = document.getElementsByClassName('people');
-for (let i=1; i < allFriends.length; i++) {
+for (let i = 1; i < allFriends.length; i++) {
     allFriends[i].addEventListener('click', function (event) {
 
         // for (let i=1; i<allFriends.length; i++) {
@@ -164,28 +207,15 @@ for (let i=1; i < allFriends.length; i++) {
             newUser += '</div>'
 
 
-            //     allUsers[key].flag = true;
-            // if (allUsers[key].flag) {
-            //     document.getElementById('infouser').innerHTML = newUser;
-            // } else {
-            //     return false;
-            // }
-
             listFriends[i].id == allUsers[key].id;
 
-            allUsers[i].flag = true ?  document.getElementById('infouser').innerHTML = newUser : false;
-
+            allUsers[i].flag = true ? document.getElementById('infouser').innerHTML = newUser : false;
         }
-
-        // if (allUsers[i].flag) {
-        //     document.getElementById('infouser').innerHTML = newUser;
-        // }
-
     });
-    console.log( listFriends[5])
+
 
 }
-// console.log(infouser)
+
 
 
 

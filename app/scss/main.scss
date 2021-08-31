@@ -293,6 +293,9 @@ body {
         margin-left: 22px;
         margin-top: 12px;
         cursor: pointer;
+        &:hover {
+          color: #fff;
+        }
 
         &__status {
           width: 8px;
@@ -310,6 +313,13 @@ body {
 
         &__photo {
           margin-left: 10px;
+          width: 32px;
+          height: 32px;
+        }
+
+        &__img {
+          width: 32px;
+          height: 32px;
         }
 
         &__name {

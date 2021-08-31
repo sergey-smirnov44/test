@@ -69,7 +69,7 @@
       <workItem from="1630144710949" duration="9625000" />
       <workItem from="1630154972739" duration="659000" />
       <workItem from="1630304964450" duration="29507000" />
-      <workItem from="1630390384851" duration="3874000" />
+      <workItem from="1630390384851" duration="15870000" />
     </task>
     <servers />
   </component>
@@ -116,18 +116,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630154442961" />
-    <state x="2151" y="0" width="1365" height="764" maximized="true" key="dock-window-1" timestamp="1630334450347">
+    <state x="277" y="108" width="1359" height="1027" key="dock-window-1" timestamp="1630402719971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="277" y="108" width="1359" height="1027" key="dock-window-1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630402719971" />
+    <state x="577" y="0" width="1359" height="1027" key="dock-window-2" timestamp="1630402719971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="577" y="0" width="1359" height="1027" key="dock-window-2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630402719971" />
+    <state x="1920" y="0" width="1359" height="1027" key="dock-window-3" timestamp="1630403106646">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2151" y="0" width="1365" height="764" maximized="true" key="dock-window-1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630334450347" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1630306459091">
+    <state x="1920" y="0" width="1359" height="1027" key="dock-window-3/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630403106646" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1630411050024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630306459091" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1629968298488">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630411050024" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1630396577060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1629968298488" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1630396577060" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
